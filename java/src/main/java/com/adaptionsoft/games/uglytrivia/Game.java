@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    private ArrayList players = new ArrayList();
+
+	public static final int COINS_TO_WIN = 6;
+	private ArrayList<String> players = new ArrayList();
     private int[] places = new int[6];
     private int[] purses  = new int[6];
     private boolean[] inPenaltyBox  = new boolean[6];
@@ -47,7 +49,7 @@ public class Game {
 		return true;
 	}
 
-	public Object getCurrentPlayer() {
+	public String getCurrentPlayer() {
     	return players.get(currentPlayer);
 	}
 	
