@@ -118,6 +118,7 @@ public class Game {
 
 	public boolean wasCorrectlyAnswered() {
 		if (inPenaltyBox[currentPlayer]){
+			// TODO: this is coupled to the roll method
 			if (isGettingOutOfPenaltyBox) {
 				System.out.println("Answer was correct!!!!");
 				purses[currentPlayer]++;
@@ -126,7 +127,7 @@ public class Game {
 						+ purses[currentPlayer]
 						+ " Gold Coins.");
 				
-				boolean winner = didPlayerWin();
+				boolean winner = playerNotAWinner();
 				endTurn();
 
 				return winner;
@@ -146,7 +147,7 @@ public class Game {
 					+ purses[currentPlayer]
 					+ " Gold Coins.");
 			
-			boolean winner = didPlayerWin();
+			boolean winner = playerNotAWinner();
 			endTurn();
 
 			return winner;
@@ -169,7 +170,7 @@ public class Game {
 	}
 
 
-	private boolean didPlayerWin() {
+	private boolean playerNotAWinner() {
 		return !(purses[currentPlayer] == 6);
 	}
 }
