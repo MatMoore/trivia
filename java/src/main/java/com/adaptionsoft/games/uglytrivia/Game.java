@@ -128,18 +128,7 @@ public class Game {
 						+ " now has "
 						+ purses[currentPlayer]
 						+ " Gold Coins.");
-				
-				boolean winner = playerNotAWinner();
-				endTurn();
-
-				return winner;
-			} else {
-				endTurn();
-				return true;
 			}
-			
-			
-			
 		} else {
 		
 			System.out.println("Answer was corrent!!!!");
@@ -148,12 +137,11 @@ public class Game {
 					+ " now has "
 					+ purses[currentPlayer]
 					+ " Gold Coins.");
-			
-			boolean winner = playerNotAWinner();
-			endTurn();
-
-			return winner;
 		}
+
+		boolean winner = playerNotAWinner();
+		endTurn();
+		return winner;
 	}
 
 	private void endTurn() {
@@ -173,6 +161,10 @@ public class Game {
 
 
 	private boolean playerNotAWinner() {
-		return !(purses[currentPlayer] == 6);
+		return !hasEnoughCoins();
+	}
+
+	private boolean hasEnoughCoins() {
+		return purses[currentPlayer] == COINS_TO_WIN;
 	}
 }
