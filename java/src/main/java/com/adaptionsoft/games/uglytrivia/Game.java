@@ -46,6 +46,10 @@ public class Game {
 	    System.out.println("They are player number " + players.size());
 		return true;
 	}
+
+	public Object getCurrentPlayer() {
+    	return players.get(currentPlayer);
+	}
 	
 	public int howManyPlayers() {
 		return players.size();
