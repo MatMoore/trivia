@@ -69,4 +69,28 @@ public class GameTest {
 
     assertEquals(aGame.getCurrentPlayer(), "Chet");
   }
+
+  @Test
+  public void playerWinsByCollectingSixGoldCoins() {
+    Game aGame = new Game();
+    aGame.add("Chet");
+    aGame.add("Pat");
+
+    assertTrue(aGame.wasCorrectlyAnswered());
+    assertTrue(aGame.wrongAnswer());
+
+    assertTrue(aGame.wasCorrectlyAnswered());
+    assertTrue(aGame.wrongAnswer());
+
+    assertTrue(aGame.wasCorrectlyAnswered());
+    assertTrue(aGame.wrongAnswer());
+
+    assertTrue(aGame.wasCorrectlyAnswered());
+    assertTrue(aGame.wrongAnswer());
+
+    assertTrue(aGame.wasCorrectlyAnswered());
+    assertTrue(aGame.wrongAnswer());
+
+    assertFalse(aGame.wasCorrectlyAnswered());
+  }
 }
