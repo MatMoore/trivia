@@ -2,6 +2,7 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Optional;
 
 public class Game {
 
@@ -15,6 +16,8 @@ public class Game {
     private LinkedList scienceQuestions = new LinkedList();
     private LinkedList sportsQuestions = new LinkedList();
     private LinkedList rockQuestions = new LinkedList();
+
+    private Optional<String> winner = Optional.empty();
     
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
@@ -166,5 +169,9 @@ public class Game {
 
 	private boolean hasEnoughCoins() {
 		return purses[currentPlayer] == COINS_TO_WIN;
+	}
+
+	private void setWinner() {
+    	this.winner = Optional.of(getCurrentPlayer());
 	}
 }
